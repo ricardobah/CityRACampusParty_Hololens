@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class TesteCube : MonoBehaviour {
 
-    
-	void Start () {
-	
-	}
-
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        print(this.gameObject.name+" no "+ collision.gameObject.name);
-        
+        ChangeByTag("Hotel",  Color.yellow);
+        ChangeByTag("Shopping",Color.red);
+        ChangeByTag("Restaurante", Color.blue);
+        //ChangeByTag("Hotel", Color.black);
+        ChangeByTag("Aluguel", Color.green);
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    private Material[] list;
+
+    public void ChangeByTag(string tag, Color color)
+    {
+        GameObject[] a = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject b in a)
+        {
+            list = b.GetComponent<MeshRenderer>().materials;
+            Debug.Log(list.Length);
+            foreach (Material t in list)
+            {
+                
+                t.color = color;
+            }
+        }
+
+    }
 }
