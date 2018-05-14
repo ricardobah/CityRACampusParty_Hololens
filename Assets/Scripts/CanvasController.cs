@@ -54,6 +54,11 @@ using UnityEngine;
                     instanciado=Resources.Load("CanvasDescriptions/Ajustes1");
                     InstCanvas(instanciado);
                     break;
+            case "BtnBack":
+                instanciado = Resources.Load("CanvasDescriptions/CanvasMeni");
+                InstCanvas(instanciado);
+                MonoBehaviour.Destroy(GameObject.Find("CanvasBack"));
+                break;
             }
         }
         public static void InstCanvas(Object inst)
