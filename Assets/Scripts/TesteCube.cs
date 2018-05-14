@@ -9,8 +9,11 @@ public class TesteCube : MonoBehaviour {
         ChangeByTag("Hotel",  Color.yellow);
         ChangeByTag("Shopping",Color.red);
         ChangeByTag("Restaurante", Color.blue);
-        //ChangeByTag("Hotel", Color.black);
+        ChangeByTag("Casa", Color.green);
         ChangeByTag("Aluguel", Color.green);
+        ChangeByTag("Loja", Color.red);
+        ChangeByTag("Banco", Color.magenta);
+        ChangeByTag("Locadora", Color.black);
     }
 
     private Material[] list;
