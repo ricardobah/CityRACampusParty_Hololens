@@ -32,6 +32,7 @@ using UnityEngine;
             switch (param)
             {
                 case "BtnTurismo":
+                    ChangeMaterials.ChangeByTag("Turismo", Color.yellow);
                     MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);

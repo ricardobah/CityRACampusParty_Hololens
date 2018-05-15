@@ -9,6 +9,7 @@ TagManager:
   - Shopping
   - Restaurante
   - Aluguel
+  - Turismo
   layers:
   - Default
   - TransparentFX
