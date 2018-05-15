@@ -66,23 +66,24 @@ using UnityEngine;
                     MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);
-                break;
-
-                case "HotelTulipa":
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
-                    instanciado =Resources.Load("CanvasDescriptions/Ajustes1");
-                    InstCanvas(instanciado);
-                break;
+                break;       
 
                 case "BtnBack":
                     instanciado = Resources.Load("CanvasDescriptions/CanvasMeni");
                     InstCanvas(instanciado);
                     MonoBehaviour.Destroy(GameObject.Find("CanvasBack"));
                 break;
-            }
+            case "HotelTulipa":
+                MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
+                instanciado = Resources.Load("CanvasDescriptions/Infos/Ajustes1");
+                InstCanvas(instanciado);
+                break;
+        }
         }
         public static void InstCanvas(Object inst)
         {
             GameObject.Instantiate(inst, GameObject.Find("CanvasPos").transform.position, new Quaternion(0, 0, 0, 0));
         }
+
+        
     }
