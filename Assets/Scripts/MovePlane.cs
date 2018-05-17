@@ -24,7 +24,7 @@ public class MovePlane : MonoBehaviour {
     {
         float newz=this.transform.position.z-Time.deltaTime;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, newz);
-        Debug.Log(newz);
+       // Debug.Log(newz);
         if (newz <-12)
         {
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, inicial);

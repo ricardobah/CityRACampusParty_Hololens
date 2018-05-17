@@ -10,6 +10,10 @@ TagManager:
   - Restaurante
   - Aluguel
   - Turismo
+  - Casa
+  - Loja
+  - Banco
+  - Locadora
   layers:
   - Default
   - TransparentFX

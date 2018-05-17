@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 222645418214363072}
   - component: {fileID: 114938090143633618}
   - component: {fileID: 114270179503525598}
+  - component: {fileID: 114729367391222260}
   m_Layer: 5
   m_Name: BtnBack
   m_TagString: Untagged
@@ -78,7 +79,7 @@ BoxCollider:
   m_GameObject: {fileID: 1004848288445272}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114195812092265248}
+      - m_Target: {fileID: 114729367391222260}
         m_MethodName: NotifyOnClick
         m_Mode: 1
         m_Arguments:
@@ -213,6 +214,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114729367391222260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996901290474594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c82a63f70580234eae5c8365f7fb5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114741427357681088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,7 +400,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996901290474594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.010000229, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.002, y: 0.002, z: 1}
   m_Children:
   - {fileID: 224429576418687190}

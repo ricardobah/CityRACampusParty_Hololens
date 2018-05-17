@@ -13,7 +13,8 @@ using UnityEngine;
         private static Object canvasEventos;
         private static Object canvasNoticias;
         private static Object instanciado;
-    private static Object canvasBack;
+        private static GameObject canvasAtual;
+        private static Object canvasBack;
 
         public static void CarregarCanvas()
         {
@@ -25,7 +26,7 @@ using UnityEngine;
             canvasEventos = Resources.Load("CanvasEventos");
             canvasNoticias = Resources.Load("CanvasNoticias");
         }
-
+    private static GameObject[] Canvlist;
         public static void OnNotification(string param)
         {
             //Debug.Log(param);
@@ -33,56 +34,84 @@ using UnityEngine;
             {
                 case "BtnTurismo":
                     ChangeMaterials.ChangeByTag("Turismo", Color.yellow);
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
+                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni(Clone)").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);
                 break;
 
                 case "BtnAluguel":
+                    ChangeMaterials.ChangeByTag("Aluguel", Color.yellow);
                     ChangeMaterials.ChangeByTag("Hotel",Color.yellow);
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
+                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni(Clone)").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);
                 break;
 
                 case "BtnCarros":
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
+                instanciado = Resources.Load("CanvasDescriptions/Infos/aluguel_carro");
+                InstCanvas(instanciado);
+                MonoBehaviour.Destroy(GameObject.Find("CanvasMeni(Clone)").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);
                 break;
 
                 case "BtnRestaurantes":
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
+                      ChangeMaterials.ChangeByTag("Restaurante", Color.yellow);
+                     MonoBehaviour.Destroy(GameObject.Find("CanvasMeni(Clone)").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);
                 break;
 
-                case "BtnEventos":
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
-                    instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
-                    InstCanvas(instanciado);
-                break;
+              
 
                 case "BtnNoticias":
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
+                instanciado = Resources.Load("CanvasDescriptions/Infos/canvas_Noticias");
+                InstCanvas(instanciado);
+                MonoBehaviour.Destroy(GameObject.Find("CanvasMeni(Clone)").gameObject);
                     instanciado = Resources.Load("CanvasDescriptions/CanvasBack");
                     InstCanvas(instanciado);
                 break;       
 
                 case "BtnBack":
+                    Canvlist = GameObject.FindGameObjectsWithTag("Banco");  
+                    foreach(GameObject a in Canvlist)
+                    {
+                        MonoBehaviour.Destroy(a);
+                    }
+                Debug.Log("asdasdasdasdas");
+                    ChangeMaterials.removeColor();
                     instanciado = Resources.Load("CanvasDescriptions/CanvasMeni");
                     InstCanvas(instanciado);
-                    MonoBehaviour.Destroy(GameObject.Find("CanvasBack"));
+                    MonoBehaviour.Destroy(GameObject.Find("CanvasBack(Clone)"));
                 break;
-            case "HotelTulipa":
-                MonoBehaviour.Destroy(GameObject.Find("CanvasMeni").gameObject);
-                instanciado = Resources.Load("CanvasDescriptions/Infos/Ajustes1");
+                case "Hotel":
+               
+                    instanciado = Resources.Load("CanvasDescriptions/Infos/Hotel");
+                    InstCanvas(instanciado);
+                break;
+            case "Aluguel":
+
+                instanciado = Resources.Load("CanvasDescriptions/Infos/Alugar");
                 InstCanvas(instanciado);
                 break;
+            case "Restaurante":
+
+                instanciado = Resources.Load("CanvasDescriptions/Infos/PIZZA_DOREAS");
+                
+                InstCanvas(instanciado);
+                break;
+            case "Turismo":
+          
+
+                instanciado = Resources.Load("CanvasDescriptions/Infos/evento");
+                InstCanvas(instanciado);
+                
+                break;
+
         }
         }
         public static void InstCanvas(Object inst)
-        {
+        {    
             GameObject.Instantiate(inst, GameObject.Find("CanvasPos").transform.position, new Quaternion(0, 0, 0, 0));
         }
 

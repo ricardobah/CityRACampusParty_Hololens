@@ -13,7 +13,7 @@ public class TesteCube : MonoBehaviour {
         ChangeByTag("Aluguel", Color.green);
         ChangeByTag("Loja", Color.red);
         ChangeByTag("Banco", Color.magenta);
-        ChangeByTag("Locadora", Color.black);
+        ChangeByTag("Turismo", Color.black);
     }
 
     private Material[] list;
@@ -21,10 +21,11 @@ public class TesteCube : MonoBehaviour {
     public void ChangeByTag(string tag, Color color)
     {
         GameObject[] a = GameObject.FindGameObjectsWithTag(tag);
+        Debug.Log(tag + " " + a.Length);
         foreach (GameObject b in a)
         {
             list = b.GetComponent<MeshRenderer>().materials;
-            Debug.Log(list.Length);
+            
             foreach (Material t in list)
             {
                 

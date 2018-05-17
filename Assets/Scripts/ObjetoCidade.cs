@@ -10,7 +10,7 @@ public class ObjetoCidade : MonoBehaviour,IInputClickHandler {
     {
         if (this.gameObject.GetComponent<MeshRenderer>().material.color == Color.yellow)
         {
-            CanvasController.OnNotification(this.gameObject.name);
+            CanvasController.OnNotification(this.gameObject.tag);
             Debug.Log(this.gameObject.name);
         }
     }
